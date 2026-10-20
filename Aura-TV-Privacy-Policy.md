@@ -12,8 +12,9 @@ Aura TV is designed from the ground up to protect your privacy:
 
 * **Zero Tracking:** We do not track you, build behavioral profiles, or include third-party advertising SDKs.
 * **No Accounts Required:** You do not need to create an Aura TV account or provide an email address to use the App.
-* **Your Credentials Stay Yours:** Your playlist server URLs, usernames, and passwords are stored securely on your device and are never transmitted to us or any third-party analytics servers.
-* **Direct Connections Only:** The App connects directly to the IPTV streaming providers and servers that you configure.
+* **100% Local Credentials & Playlists:** Your playlist sources, M3U URLs, server addresses, usernames, passwords, and viewing history remain strictly on your local device and are never sent to Aura TV or any developer-owned servers.
+* **No Sensitive Data in iCloud KVS:** iCloud synchronization is disabled by default. When explicitly enabled by you, only non-sensitive user customization preferences (such as hidden category IDs) synchronize privately across your Apple devices via your personal Apple iCloud account. Playlist URLs, server addresses, usernames, passwords, and watch history are never stored in or transmitted through iCloud Key-Value Store.
+* **Direct Connections Only:** The App connects directly and exclusively to the IPTV streaming providers and servers that you configure.
 
 ---
 
@@ -21,22 +22,24 @@ Aura TV is designed from the ground up to protect your privacy:
 
 ### A. Playlist Configuration and Credentials
 * **What is handled:** Server URLs, M3U/M3U8 playlist addresses, XMLTV EPG links, usernames, and passwords entered by you.
-* **Storage:** Stored locally on your device within the App’s sandboxed SQLite database and local preferences.
-* **Transmission:** Transmitted directly and exclusively to your configured IPTV streaming server or provider to authenticate your subscription, fetch channel manifests, and stream media. We do not operate intermediary proxy servers or store your credentials on our own servers.
+* **Storage:** Stored locally on your device within the App’s sandboxed SQLite database and local preferences. They are never uploaded or synced to external servers.
+* **Transmission:** Transmitted directly and exclusively to your configured IPTV streaming server or provider to authenticate your subscription, fetch channel manifests, and stream media. We do not operate intermediary proxy servers or store your credentials on our own servers. Passwords and URLs remain exclusively on the device where they were entered.
 
-### B. Optional Apple iCloud Synchronization
-* **Functionality:** If you enable iCloud Sync, your playlist metadata, favorite channels, and watch progress synchronize across your Apple devices (iPhone, iPad, Apple TV).
-* **Security:** Synchronization operates through Apple's native iCloud Key-Value Store (`NSUbiquitousKeyValueStore`). All sync data is encrypted in transit and at rest within your personal Apple iCloud account.
-* **Access:** Only you and your authenticated Apple ID have access to this synchronized data. The developers of Aura TV have no access to your iCloud sync payloads.
+### B. Optional Apple iCloud Synchronization (Opt-In)
+* **Status:** iCloud synchronization is **disabled by default**. It can only be activated if you explicitly toggle "iCloud Sync" on in Settings.
+* **Scope:** When enabled, synchronization includes strictly non-sensitive app customization preferences (such as hidden category IDs).
+* **Zero Credentials or History in KVS:** In compliance with Apple security guidelines, sensitive authentication credentials (passwords, usernames), full playlist source URLs (which may embed credentials in path or query strings), and watch history are **never** stored in or synchronized through Apple's Key-Value Store (`NSUbiquitousKeyValueStore`).
+* **Security & Storage:** Synchronization operates directly through your personal Apple iCloud account and is encrypted in transit and on Apple's cloud infrastructure. As documented by Apple, Key-Value Store values are cached unencrypted on local device storage by the operating system. For this reason, Aura TV never stores sensitive authentication credentials, server addresses, full playlist URLs, or viewing history in iCloud Key-Value Store. The developers of Aura TV have no access to your iCloud sync payloads.
 
 ### C. Viewing History and Offline Storage
-* **Watch Progress:** Resume positions, Continue Watching states, and playback history are stored locally in the App’s on-device SQLite database to provide seamless multi-room resume.
+* **Watch Progress:** Resume positions, Continue Watching states, and playback history are stored locally in the App’s on-device SQLite database to provide seamless resume.
 * **Downloads (iOS):** Downloaded video files are saved exclusively to your device's local application storage for offline playback. You can delete downloads at any time from the Downloads & History settings screen.
 
 ### D. Third-Party Metadata and Public APIs
-To provide rich poster artwork, synopsis details, and sports schedules, the App queries public APIs:
+To provide rich poster artwork, synopsis details, and sports schedules, the App queries public metadata services:
 * **The Movie Database (TMDB):** The App queries TMDB for movie and TV series metadata and poster artwork using sanitized titles. No personal identifying information or credentials are sent to TMDB.
   * *Attribution Notice:* This product uses the TMDB API but is not endorsed or certified by TMDB.
+* **Cinemeta Open Catalog:** The tvOS App may query Cinemeta open catalogs (`cinemeta.strem.io`) for supplementary community metadata and IMDb ratings. No user credentials or personal data are transmitted.
 * **Sports Scoreboard APIs (ESPN, TheSportsDB):** The App queries public scoreboard feeds to display match fixtures, kick-off times, and live scores. These requests are anonymous public HTTP/HTTPS queries.
 
 ### E. Local Network and AirPlay Remuxing (iOS)
@@ -91,4 +94,5 @@ We may update this Privacy Policy from time to time. Any revisions will be refle
 
 If you have any questions or feedback regarding this Privacy Policy, please contact us:
 
-* **email:** pgvd.nagendra@gmail.com
+* **Email:** [pgvd.nagendra@gmail.com](mailto:pgvd.nagendra@gmail.com)
+* **Hosted Privacy Policy:** [https://github.com/pgvdn/Aura-tv/blob/main/Aura-TV-Privacy-Policy.md](https://github.com/pgvdn/Aura-tv/blob/main/Aura-TV-Privacy-Policy.md)
