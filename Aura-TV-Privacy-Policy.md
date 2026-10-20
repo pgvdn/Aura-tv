@@ -1,86 +1,96 @@
 # Privacy Policy for Aura TV
 
-**Effective Date:** September 14, 2026  
-**Last Updated:** September 14, 2026
+**Last Updated:** October 20, 2026
 
-This Privacy Policy explains how **Aura TV**, developed by **Girish Padavala** (“Aura TV,” “we,” “us,” or “our”), handles information when you use the Aura TV application.
+Aura TV ("we", "us", or "our") respects your privacy. This Privacy Policy describes how your information is handled when you use the Aura TV application for **iOS, iPadOS, and tvOS** (the "App").
 
-Aura TV is a media player that allows users to connect to and play media from sources they choose to configure. **Aura TV does not provide, sell, host, broadcast, or distribute IPTV subscriptions, television channels, movies, series, or other third-party media content.** Users are responsible for ensuring they have the necessary rights and authorization to access content through services or sources they configure in Aura TV.
+---
 
-## Information Aura TV May Process
+## 1. Summary — Privacy First
 
-Depending on the features you use, Aura TV may process limited information necessary to operate the service, including app-generated user or device identifiers; IPTV playlist and service configuration; playlist URLs and server addresses; usernames and passwords required to access user-configured IPTV services; favorites and watchlists; recently watched and Continue Watching information; playback position and viewing progress; app preferences and settings; and limited technical and diagnostic information.
+Aura TV is designed from the ground up to protect your privacy:
 
-## IPTV Credentials
+* **Zero Tracking:** We do not track you, build behavioral profiles, or include third-party advertising SDKs.
+* **No Accounts Required:** You do not need to create an Aura TV account or provide an email address to use the App.
+* **Your Credentials Stay Yours:** Your playlist server URLs, usernames, and passwords are stored securely on your device and are never transmitted to us or any third-party analytics servers.
+* **Direct Connections Only:** The App connects directly to the IPTV streaming providers and servers that you configure.
 
-When you configure an IPTV or media service requiring authentication, Aura TV may process the server address, username, and password necessary to connect to that service. These credentials are used only to provide the functionality requested by the user.
+---
 
-Aura TV may provide direct playback by connecting your Apple TV directly to your configured media provider. When this occurs, the third-party provider may receive technical information necessary for the connection, including your IP address.
+## 2. Information We Handle and How It Is Used
 
-We do not sell IPTV credentials or use them for advertising. We take reasonable measures to prevent usernames, passwords, authentication tokens, and credential-bearing playback URLs from being included in application logs or diagnostic information.
+### A. Playlist Configuration and Credentials
+* **What is handled:** Server URLs, M3U/M3U8 playlist addresses, XMLTV EPG links, usernames, and passwords entered by you.
+* **Storage:** Stored locally on your device within the App’s sandboxed SQLite database and local preferences.
+* **Transmission:** Transmitted directly and exclusively to your configured IPTV streaming server or provider to authenticate your subscription, fetch channel manifests, and stream media. We do not operate intermediary proxy servers or store your credentials on our own servers.
 
-## Media and Third-Party Content
+### B. Optional Apple iCloud Synchronization
+* **Functionality:** If you enable iCloud Sync, your playlist metadata, favorite channels, and watch progress synchronize across your Apple devices (iPhone, iPad, Apple TV).
+* **Security:** Synchronization operates through Apple's native iCloud Key-Value Store (`NSUbiquitousKeyValueStore`). All sync data is encrypted in transit and at rest within your personal Apple iCloud account.
+* **Access:** Only you and your authenticated Apple ID have access to this synchronized data. The developers of Aura TV have no access to your iCloud sync payloads.
 
-Aura TV functions as a media player for user-configured sources. Girish Padavala does not provide or claim ownership of media available through third-party services configured by users. Aura TV does not control the content, availability, legality, security, or privacy practices of third-party media providers.
+### C. Viewing History and Offline Storage
+* **Watch Progress:** Resume positions, Continue Watching states, and playback history are stored locally in the App’s on-device SQLite database to provide seamless multi-room resume.
+* **Downloads (iOS):** Downloaded video files are saved exclusively to your device's local application storage for offline playback. You can delete downloads at any time from the Downloads & History settings screen.
 
-## Playback and Personalization
+### D. Third-Party Metadata and Public APIs
+To provide rich poster artwork, synopsis details, and sports schedules, the App queries public APIs:
+* **The Movie Database (TMDB):** The App queries TMDB for movie and TV series metadata and poster artwork using sanitized titles. No personal identifying information or credentials are sent to TMDB.
+  * *Attribution Notice:* This product uses the TMDB API but is not endorsed or certified by TMDB.
+* **Sports Scoreboard APIs (ESPN, TheSportsDB):** The App queries public scoreboard feeds to display match fixtures, kick-off times, and live scores. These requests are anonymous public HTTP/HTTPS queries.
 
-Aura TV may process and store information necessary to provide features such as Continue Watching, Recently Watched, Favorites, Watchlists, playback progress, selected media sources, and application preferences.
+### E. Local Network and AirPlay Remuxing (iOS)
+* **Local Network Usage:** The iOS App utilizes local networking (`NWListener`) solely to cast transcoded/remuxed video streams to your Apple TV or AirPlay-compatible receivers on your local home Wi-Fi network. No media or network data is transmitted outside your local area network.
 
-## Technical and Diagnostic Information
+---
 
-Aura TV may process limited technical information necessary to maintain, troubleshoot, secure, and improve the application. This may include the Aura TV version, operating system version, general device information, playback engine, playback failures, error information, and service performance information.
+## 3. Data Retention and Deletion
 
-Sensitive IPTV credentials and complete credential-bearing playback URLs are not intentionally included in diagnostic logs.
+* **In-App Deletion:** You can delete any playlist at any time by tapping **Settings → Delete Playlist**. This instantly and permanently purges the playlist, credentials, and associated catalog from your device.
+* **Clear Cache:** You can clear cached posters, EPG data, and artwork from the in-app Settings menu at any time.
+* **App Uninstallation:** Deleting the App from your Apple device completely removes all local sandboxed storage, databases, and preferences.
 
-## How Information Is Used
+---
 
-Information processed by Aura TV may be used to provide application functionality, connect to user-configured media services, retrieve media catalogs and metadata, enable media playback, maintain playback sessions, synchronize favorites and watchlists, maintain Continue Watching and playback progress, remember user preferences, diagnose technical and playback problems, maintain service reliability and security, and prevent misuse of the service.
+## 4. Third-Party Links and User Content Disclaimer
 
-Aura TV does not use IPTV credentials for advertising.
+Aura TV is a generic media player client. The App does not bundle, pre-load, host, or distribute any media streams, channels, or playlists:
+* Users must supply their own legally obtained M3U playlists or Xtream Codes subscriptions.
+* We do not endorse, facilitate, or condone the unauthorized streaming of copyrighted material.
+* Content streamed through user-provided links is governed by the terms and privacy practices of the respective third-party streaming providers.
 
-## Sharing of Information
+---
 
-We do not sell personal information. Information may be transmitted to third parties when necessary to provide functionality requested by the user. For example, when you request playback from an IPTV provider, Aura TV may connect directly to that provider's server.
+## 5. Children's Privacy
 
-We may also use infrastructure or service providers necessary to operate Aura TV and its backend services. Such providers may process limited information as necessary to provide those services.
+Aura TV does not knowingly collect or solicit any personal information from children under the age of 13. The App includes an optional **Adult Content Filter** to hide adult categories and streams when configured by the user.
 
-## Third-Party Services
+---
 
-Aura TV may communicate with IPTV providers, media servers, metadata providers, or other third-party services selected or configured by the user. These services operate independently of Aura TV and may have their own privacy policies and terms.
+## 6. App Store Privacy Declarations
 
-## Data Retention
+In compliance with Apple's App Store Privacy Requirements (Apple Privacy Manifest):
 
-Information is retained only for as long as reasonably necessary to provide Aura TV's functionality, maintain and secure the service, comply with applicable legal obligations, and resolve technical or operational issues. Where supported, users may remove configured media sources and associated information from Aura TV.
+| Category | Declaration | Reason |
+|---|---|---|
+| **Tracking** | `NSPrivacyTracking: false` | No tracking across apps or websites. |
+| **Data Collection** | None collected by developer | All data stays on-device or within your private iCloud account. |
+| **UserDefaults API** | Reason `CA92.1` | Used strictly to read and write in-app preferences within the App container. |
+| **File Timestamp API** | Reason `C617.1` | Used strictly to verify local SQLite database and cache file modification dates. |
+| **Disk Space API** | Reason `E174.1` | Used strictly to check available storage before saving offline downloads or database chunks. |
 
-## Security
+---
 
-We use reasonable technical and administrative safeguards designed to protect information processed by Aura TV. Communication with Aura TV's production backend services uses encrypted HTTPS connections where supported. No electronic transmission or storage method can be guaranteed to be completely secure.
+## 7. Changes to This Privacy Policy
 
-## Children's Privacy
+We may update this Privacy Policy from time to time. Any revisions will be reflected with an updated "Last Updated" date at the top of this document and made accessible within the App settings.
 
-Aura TV is not specifically directed to children under the age of 13. We do not knowingly collect personal information from children under 13. If we become aware that such information has been collected contrary to applicable law, appropriate steps will be taken to remove it.
+---
 
-## Your Choices and Privacy Requests
+## 8. Contact Information
 
-Depending on the functionality available in Aura TV, users may be able to remove configured media sources, remove IPTV account information, clear viewing information, remove favorites or watchlists, change application preferences, and request deletion of information associated with their use of Aura TV.
+If you have any questions or feedback regarding this Privacy Policy, please contact us:
 
-For privacy-related questions or requests:
-
-**Girish Padavala**  
-**Email:** [YOUR SUPPORT/PRIVACY EMAIL]
-
-## International Data Processing
-
-Infrastructure or service providers used by Aura TV may process information in countries other than the user's country of residence. Where required by applicable law, appropriate measures will be taken regarding such processing.
-
-## Changes to This Privacy Policy
-
-This Privacy Policy may be updated as Aura TV's features, practices, or legal requirements change. The “Last Updated” date at the top of this document will be updated when changes are made.
-
-## Contact
-
-**Girish Padavala**  
-Developer of Aura TV  
-**Email:** [YOUR SUPPORT/PRIVACY EMAIL]  
-**Website:** [YOUR WEBSITE, IF APPLICABLE]
+* **Website:** [https://AuraTV.com](https://AuraTV.com)
+* **Privacy Inquiries:** [privacy@AuraTV.com](mailto:privacy@AuraTV.com)
+* **GitHub Repository:** [https://github.com/bsogulcan/AuraTV](https://github.com/bsogulcan/AuraTV)
