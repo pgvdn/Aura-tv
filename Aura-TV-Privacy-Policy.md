@@ -91,6 +91,4 @@ We may update this Privacy Policy from time to time. Any revisions will be refle
 
 If you have any questions or feedback regarding this Privacy Policy, please contact us:
 
-* **Website:** [https://AuraTV.com](https://AuraTV.com)
-* **Privacy Inquiries:** [privacy@AuraTV.com](mailto:privacy@AuraTV.com)
-* **GitHub Repository:** [https://github.com/bsogulcan/AuraTV](https://github.com/bsogulcan/AuraTV)
+* **email:** pgvd.nagendra@gmail.com
