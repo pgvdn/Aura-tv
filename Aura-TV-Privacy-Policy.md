@@ -95,4 +95,4 @@ We may update this Privacy Policy from time to time. Any revisions will be refle
 If you have any questions or feedback regarding this Privacy Policy, please contact us:
 
 * **Email:** [pgvd.nagendra@gmail.com](mailto:pgvd.nagendra@gmail.com)
-* **Hosted Privacy Policy:** [https://github.com/pgvdn/Aura-tv/blob/main/Aura-TV-Privacy-Policy.md](https://github.com/pgvdn/Aura-tv/blob/main/Aura-TV-Privacy-Policy.md)
+* **Hosted Privacy Policy:** [https://pgvdn.github.io/Aura-tv/Aura-TV-Privacy-Policy.md]
